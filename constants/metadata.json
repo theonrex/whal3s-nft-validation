@@ -1,0 +1,19 @@
+{
+  "description": "A unique moon in a collection of moons :)",
+  "attributes": [
+    {
+      "trait_type": "Weather",
+      "value": "Night"
+    },
+    {
+      "trait_type": "Moon",
+      "value": "Gray"
+    },
+    {
+      "trait_type": "Extra",
+      "value": "none"
+    }
+  ],
+  "image": "https://ipfs.thirdwebcdn.com/ipfs/QmT4sXksrEKWBUitxuDBcCXUYHvnxF5FwUjaLdeFPtqehx/1.png",
+  "name": "Moon #1"
+}
