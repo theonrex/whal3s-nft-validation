@@ -3,7 +3,6 @@ import Button from "../../Button";
 import { format } from "timeago.js";
 import { NftValidationUtility } from "@whal3s/whal3s.js";
 import notify from "../../../utils/notify";
-import ClaimButton from "../../ClaimButton";
 
 const SelectNft = ({ utility }) => {
   const [loading, setLoading] = useState(false);
@@ -19,39 +18,35 @@ const SelectNft = ({ utility }) => {
       });
   };
   console.log(utility.nfts);
-  //   console.log(utility.nfts?.nfts[0].attributes.media[0].thumbnail);
   return (
     <div>
-      <div className="h-full flex flex-col">
+      <div className="h-full rounded-lg flex flex-col">
         {utility?.nfts?.nfts?.length === 0 && (
           <div
-            className={`relative flex items-start space-x-3 border border-white-300 bg-dark px-6 py-5  hover:border-white-400 `}
-                  >
-                      <ClaimButton/>
+            className={`relative flex items-start space-x-3 border border-gray-300 bg-white px-6 py-5 shadow-sm hover:border-gray-400 `}
+          >
             <p>You dont own an NFT. Claim one with the button above.</p>
           </div>
         )}
         {utility?.nfts?.nfts?.length > 0 && (
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-1">
-            <span className="text-sm font-medium text-white-900">Preview </span>
+          <div className="grid rounded-lg grid-cols-1 gap-4 sm:grid-cols-1">
             {utility?.nfts?.nfts?.map((nft) => (
               <div
                 key={nft.attributes?.id?.tokenId}
-                className={` border border-white-300 bg-dark px-6 py-5   focus-within:ring-offset-2 hover:border-white-400 ${
+                className={` border border-purple-300 bg-white rounded-lg px-6 py-5 shadow-sm focus-within:ring-2 focus-within:ring-purple-500 focus-within:ring-offset-2 hover:border-gray-400 ${
                   utility.tokenId === nft.attributes.id.tokenId
-                    ? "bg-dark ring-offset-2"
-                    : "bg-dark"
+                    ? "ring-2 ring-purple-700 ring-offset-2"
+                    : ""
                 }`}
               >
-                <div className="relative flex items-start space-x-3">
+                <div className="relative flex select_nft items-start space-x-3">
                   <div className="flex-shrink-0">
                     <img
                       className="h-20 w-20 rounded-lg object-cover bg-cover bg-whal3s-400"
-                      src={nft?.attributes?.media[0]?.thumbnail}
+                      src={nft.attributes.media[0].thumbnail}
                       alt=""
                     />
                   </div>
-
                   <div className="min-w-0 flex-1">
                     <div
                       className={`${
@@ -63,12 +58,12 @@ const SelectNft = ({ utility }) => {
                           if (!nft.valid) return;
                           utility.tokenId = nft.attributes.id.tokenId;
                         }}
-                        className="absolute inset-0"
+                        className="absolute inset-0 "
                         aria-hidden="true"
                       />
                       <div className="h-full flex flex-col justify-between">
                         <div className="flex justify-between">
-                          <span className="text-sm font-medium text-white-900">
+                          <span className="text-sm font-medium text-gray-900 capitalize">
                             {nft.attributes.title}
                           </span>
                           {nft.valid ? (
@@ -76,12 +71,12 @@ const SelectNft = ({ utility }) => {
                               Valid
                             </span>
                           ) : (
-                            <span className="h-min inline-flex items-center rounded-full bg-red-100 px-2.5 py-0.5 text-xs font-medium text-red-800">
+                            <span className="h-min inline-flex items-center rounded-full bg-purple-100 px-2.5 py-0.5 text-xs font-medium text-purple-800">
                               Invalid
                             </span>
                           )}
                         </div>
-                        <div className="text-white-500 hidden sm:block">
+                        <div className="text-gray-500 hidden sm:block">
                           {nft.engagements.length > 0 &&
                             nft.engagements.map((engagement) => (
                               <p key={engagement.id}>
@@ -98,7 +93,7 @@ const SelectNft = ({ utility }) => {
                     </div>
                   </div>
                 </div>
-                <div className="mt-2.5 text-white-500 w-full sm:hidden ">
+                <div className="mt-2.5 text-gray-500 w-full sm:hidden ">
                   {nft.engagements.length > 0 &&
                     nft.engagements.map((engagement) => (
                       <p key={engagement.id}>
@@ -110,6 +105,7 @@ const SelectNft = ({ utility }) => {
                       </p>
                     ))}
                 </div>
+                <h2 className="text-gray-700"> Click NFT to continue</h2>
               </div>
             ))}
           </div>

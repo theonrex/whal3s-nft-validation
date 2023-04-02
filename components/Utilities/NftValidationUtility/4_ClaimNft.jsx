@@ -23,13 +23,12 @@ const ClaimNft = ({ utility }) => {
   return (
     <div className="h-full flex flex-col">
       <div>
-        <p>Provide your email to continue.
-        </p>
+        <p>Provide your email to continue.</p>
       </div>
       <div className="mt-5">
         <label
           htmlFor="email"
-          className="block text-sm font-medium text-gray-700"
+          className="block text-sm font-medium text-white-700"
         >
           Email
         </label>
@@ -39,9 +38,9 @@ const ClaimNft = ({ utility }) => {
             type="email"
             name="email"
             id="email"
-            className="block w-full rounded-md border-gray-300 shadow-sm focus:border-whal3s-500 focus:ring-whal3s-500 sm:text-sm"
-            placeholder="you@example.com"
-          ></input>
+            className="bg-black-500 border border-black-300 text-black-900 text-sm rounded-lg focus:ring-purple-600 focus:border-purple-600 block w-full p-2.5 dark:bg-black-700 dark:border-black-600 dark:placeholder-black-400 dark:text-white dark:focus:ring-purple-600 dark:focus:border-purple-600"
+            placeholder="email@example.com"
+          />
         </div>
       </div>
       <div className="mt-5 flex flex-grow items-end justify-end">

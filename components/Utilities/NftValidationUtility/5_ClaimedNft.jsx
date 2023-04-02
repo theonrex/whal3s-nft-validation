@@ -11,7 +11,7 @@ const ClaimedNft = ({utility}) => {
                     <HiCheckCircle className="h-5 w-5 text-green-400" aria-hidden="true" />
                 </div>
                 <div className="ml-3">
-                    <p className="text-sm font-medium text-green-800">Successfully claimed! Display whatever you want as the success message. In our case its just that, nothing special :)</p>
+                    <p className="text-sm font-medium text-green-800">Successfully claimed! Congratulations:)</p>
                 </div>
 
             </div>

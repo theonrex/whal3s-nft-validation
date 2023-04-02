@@ -1,124 +1,173 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;900&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;900&display=swap");
 
 html,
 body {
   padding: 0;
   margin: 0;
-font-family: 'Source Sans Pro', sans-serif;}
-
-div{
-font-family: 'Source Sans Pro', sans-serif;
+  color: white;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
+div {
+  font-family: "Source Sans Pro", sans-serif;
+}
 
-.rowx{
+.rowx {
   display: table;
+  margin-top: 9em;
 }
 //welcome_page
-.col50{
+.col50 {
   float: left;
   width: 48%;
   padding: 1em;
-  margin-top: 9em;
 }
-.Magical_header{
-  color: #b9009a;
+.Magical_header {
+  padding: 0.4em;
   font-size: 1em;
-  
+}
+button {
+  background-image: -webkit-linear-gradient(
+    135deg,
+    #ff4800 24%,
+    #ff0deb 91%
+  ) !important;
 }
 
-.progress_bar{
-    background-color: #b9009a;    
+.progress_bar {
+  background-color: #65005d;
 }
 
-.utility_h1{
-  font-size: 4em;
-  text-transform:capitalize;
-  line-height: 1.4em;
+.utility_h1 {
+  font-size: 1.5em;
+  text-transform: capitalize;
+  // line-height: 1.4em;
   font-weight: 900;
 }
 
-.utility_p{
-    font-size: 1.5em;
-    color: white;
-    padding-bottom: 2em;
+.utility_p {
+  font-size: 1.5em;
+  color: white;
 }
-.utility_h1 span{
-  color: #b9009a;
+.utility_h1 span {
+  line-height: 1.3em;
+  font-size: 2em;
+  color: #ff4800;
+  background-image: -webkit-linear-gradient(135deg, #ff4800 24%, #ff0deb 91%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
 }
-.col8{
+.col8 {
   width: 8%;
   float: left;
 }
 
-.div_circle{
+.div_circle {
   width: 50%;
   height: 50% !important;
-    background-color: white;
-    border-radius: 40%;
-
+  background-color: white;
+  border-radius: 40%;
 }
 
-.steps_section{
-    margin-bottom: 7em;
+.steps_section {
+  margin-bottom: 7em;
 }
-.steps_section header{
-font-size: 1.3em;
-font-style: italic;
-color: #b9009a;
+.steps_section header {
+  font-size: 1.3em;
+  font-style: italic;
+  color: rgb(249, 249, 249);
+  padding-bottom: 1em;
 }
-.steps_section .col92 h1{
-    font-size: 1.2em;
-    text-transform: capitalize;
-    padding: 0;
+.steps_section .col92 h1 {
+  font-size: 1.2em;
+  text-transform: capitalize;
+  padding: 0;
 }
-.steps_section .col92 p{
-    font-size: 1em;
-    padding: 0.5em 0 0 0 ;
+.steps_section .col92 p {
+  font-size: 1em;
+  padding: 0.5em 0 1em 0;
 }
 
-.h1_circle  {
+.h1_circle {
   margin: auto;
   color: black;
   text-align: center;
   font-size: 1.2em;
-    width: 1.5em;
-    margin: auto;
-    height: 1.5em;
-      position: relative;
+  width: 1.5em;
+  margin: auto;
+  height: 1.5em;
+  position: relative;
+    border-left: 1px solid rgba(255, 255, 255, 0);
 
 }
-
-
 
 .circle_div {
   text-align: center;
   margin: auto;
   top: 0;
 }
-.vl{
-    z-index: -1 ;
-    border-left: 1px solid rgb(255, 255, 255);
+.vl {
+  z-index: -1;
   height: 3em !important;
   left: 50%;
   position: absolute;
   margin: 0.3em auto;
-  padding: 0!important;
-  
+  padding: 0 !important;
 }
-.h1_circle span  {
-   display: flex;
-    background-color: white;
-    border-radius: 50%;
-  
-    color: black;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
+.h1_circle span {
+  display: flex;
+  background-color: white;
+  border-radius: 50%;
+
+  color: black;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 }
-.col92{
+.col92 {
   width: 92%;
-  padding: 0 1em;
+  padding: 0 1em 1.4em;
   float: left;
+}
+
+//
+@media screen and (max-width: 1200px) {
+  .col50 {
+    width: 100%;
+  }
+
+  .steps_section {
+
+  display: flex;
+
+}
+}
+
+@media screen and (max-width: 490px) {
+  .utility_h1 span {
+    line-height: 1.3em;
+    font-size: 1.6em;
+  }
+
+  .utility_h1 {
+    font-size: 1.1em;
+    text-transform: capitalize;
+    font-weight: 900;
+  }
+  .select_nft {
+    flex-direction: column;
+  }
+  .select_nft div{
+    margin-left: 0 !important;
+  }
+  .steps_section {
+    padding-bottom: 3em;
+}
+footer .flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 }

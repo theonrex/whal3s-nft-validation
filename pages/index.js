@@ -19,17 +19,18 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   // if (typeof self === "undefined") {
   //   self = this;
-  // }
+  // };
 
   return (
     <>
       <WelcomePage />
-      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-18 lg:py-24 font-sans">
+      <div
+        id="claim"
+        className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-18 lg:py-24 font-sans"
+      >
         <NftValidationUtilitySection />
-
-        {/* {*< /NftValidationUtilitySection> */}
       </div>
-      <Footer></Footer>
+      <Footer />
       <Toaster />
     </>
   );
