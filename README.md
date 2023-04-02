@@ -30,7 +30,6 @@ npm install
 
 Update Your Env:
 https://app.whal3s.xyz/
-Copy code
 
 ```sh
 NEXT_PUBLIC_UTILITY_ID = "Your Whal3s Utility ID"
@@ -59,7 +58,7 @@ npm run build
 ## Built With
 * [Next.js -](https://nextjs.org/)  A framework for building server-rendered React applications
 * [Whal3s -](https://app.whal3s.xyz/)  A Web3 Utility for Verifying web3 users, validating tokens, and record claims in any application.
-* [Whal3s Documentation -](https://docs.whal3s.xyz/)  
+* [Whal3s Documentation -](https://docs.whal3s.xyz/)  Whal3s Documentation
 
 
 
