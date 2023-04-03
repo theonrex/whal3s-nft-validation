@@ -32,7 +32,7 @@ const NftValidationUtilitySection = () => {
 
   const updateUtilityId = () => {
     localStorage.setItem(
-      "nft-validation-utility-id",
+      "365e457c-a900-47ab-be41-cd58775b212b",
       JSON.stringify(myUtilityId)
     );
     setUtilityId(myUtilityId);
