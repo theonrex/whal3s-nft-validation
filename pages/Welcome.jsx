@@ -1,6 +1,6 @@
 import { Toaster } from "react-hot-toast";
 import React from "react";
-import NftValidationUtilitySection from "../Components/Utilities/NftValidationUtilitySection";
+import NftValidationUtilitySection from "../components/Utilities/NftValidationUtilitySection";
 
 export default function WelcomePage() {
   return (
