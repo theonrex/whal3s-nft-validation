@@ -12,11 +12,11 @@ import { ImSpinner2 } from "react-icons/im";
 const NftValidationUtilitySection = () => {
  const whal3s = new Whal3s();
   const [utilityId, setUtilityId] = useState(
-    JSON.parse(localStorage.getItem(process.env.NEXT_PUBLIC_UTILITY_ID)) ||
+    JSON.parse(localStorage.getItem("365e457c-a900-47ab-be41-cd58775b212b")) ||
       undefined
   );
   const [newUtilityId, setNewUtilityId] = useState(
-    process.env.NEXT_PUBLIC_UTILITY_ID
+    "365e457c-a900-47ab-be41-cd58775b212b"
   );
   const [utility, setUtility] = useState(undefined);
   const [step, setStep] = useState(0);
