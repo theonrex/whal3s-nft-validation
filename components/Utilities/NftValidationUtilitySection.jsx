@@ -88,8 +88,8 @@ const NftValidationUtilitySection = () => {
       {utility || !utility ? (
         <div className="grid gap-5 grid grid-cols-1 md:grid-cols-[1fr_2fr]">
           <div className="flex flex-col align-center">
-            <h4 className="font-bold text-2xl">{utility.details.name}</h4>
-            <p>{utility.details.description}</p>
+            <h4 className="font-bold text-2xl">{utility?.details.name}</h4>
+            <p>{utility?.details.description}</p>
             <img
               src="https://ipfs.thirdwebcdn.com/ipfs/Qmf1eey2fAHZU5pnmymVyhyX89bUx4jqQgAGwxdTYHPG2Q/QmdyQByUtuPEMa6n8PwtgLgedcFHWBYSbriQyNduAnA66t.png"
               alt=""
