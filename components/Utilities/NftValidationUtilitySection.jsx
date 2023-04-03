@@ -57,9 +57,11 @@ const NftValidationUtilitySection = () => {
     try {
       const tmpUtility = await whal3s.createValidationUtility(utilityId);
       tmpUtility.addEventListener("stepChanged", (step) => {
-        console.log("setting step to ", step.detail.step);
-        setUtility(tmpUtility);
-        setStep(step.detail.step);
+        if (utility) {
+          console.log("setting step to ", step.detail.step);
+          setUtility(tmpUtility);
+          setStep(step.detail.step);
+      }
       });
       setUtility(tmpUtility);
       setStep(tmpUtility.step);
@@ -67,6 +69,9 @@ const NftValidationUtilitySection = () => {
       setUtility(undefined);
     }
   }
+
+
+  console.log(utility)
 
   return (
     <div className="border rounded-lg border-zinc-300 p-5 md:p-10 ">
