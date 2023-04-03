@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import WebButton from "../../WebButton";
+import WebButton from "../../components/WebButton";
 import { format } from "timeago.js";
 import { NftValidationUtility } from "@whal3s/whal3s.js";
-import notify from "../../../utils/notify";
+import notify from "../../utils/notify";
 
 const SelectNft = ({ utility }) => {
   const [loading, setLoading] = useState(false);

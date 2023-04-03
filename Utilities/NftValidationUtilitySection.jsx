@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Whal3s, { NftValidationUtility } from "@whal3s/whal3s.js";
-import NftValidationUtilityProgressBar from "../ProgressBars/NftValidationUtilityProgressBar";
+import NftValidationUtilityProgressBar from "../components/ProgressBars/NftValidationUtilityProgressBar";
 import Uninitialized from "./NftValidationUtility/0_Uninitialized";
 import ConnectWallet from "./NftValidationUtility/1_ConnectWallet";
 import LoadingNfts from "./NftValidationUtility/2_LoadingNfts";
@@ -10,20 +10,15 @@ import SelectNft from "./NftValidationUtility/3_SelectNft";
 import { ImSpinner2 } from "react-icons/im";
 
 const NftValidationUtilitySection = () => {
-  const [isLoaded, setIsLoaded] = useState(false);
-  useEffect(() => {
-    setIsLoaded(true);
-  }, []);
-
   const whal3s = new Whal3s();
   const [utilityId, setUtilityId] = useState(
     JSON.parse(localStorage.getItem("365e457c-a900-47ab-be41-cd58775b212b")) ||
-      undefined
+      newUtilityId
   );
   const [newUtilityId, setNewUtilityId] = useState(
     "365e457c-a900-47ab-be41-cd58775b212b"
   );
-  const [utility, setUtility] = useState(undefined);
+  const [utility, setUtility] = useState();
   const [step, setStep] = useState(0);
   if (typeof self === "undefined") {
     self = this;
@@ -36,7 +31,7 @@ const NftValidationUtilitySection = () => {
 
   const updateUtilityId = () => {
     localStorage.setItem(
-      "365e457c-a900-47ab-be41-cd58775b212b",
+      "nft-validation-utility-id",
       JSON.stringify(myUtilityId)
     );
     setUtilityId(myUtilityId);
@@ -47,33 +42,8 @@ const NftValidationUtilitySection = () => {
   }, []);
 
   useEffect(() => {
-    if (!isLoaded) return; // Only run on client-side after server load
     init();
-  }, [isLoaded]);
-
-  // async function init() {
-  //   console.log("init");
-  //   if (!utilityId) return;
-  //   setStep(0);
-  //   if (utility) {
-  //     console.log("destroying old utility");
-  //     utility.destroy();
-  //   }
-  //   try {
-  //     const tmpUtility = await whal3s.createValidationUtility(utilityId);
-  //     tmpUtility.addEventListener("stepChanged", (step) => {
-  //      console.log("setting step to ", step.detail.step);
-  //      setUtility(tmpUtility);
-  //      setStep(step.detail.step);
-  //     });
-  //     setUtility(tmpUtility);
-  //     setStep(tmpUtility.step);
-  //   } catch (e) {
-  //     setUtility(undefined);
-  //     setStep(0);
-  //     console.error(e);
-  //   }
-  // }
+  }, [utilityId]);
 
   async function init() {
     console.log("init");
@@ -84,32 +54,29 @@ const NftValidationUtilitySection = () => {
       utility.destroy();
     }
     try {
-      whal3s.createValidationUtility(newUtilityId).then((newUtilityId) => {
-        newUtilityId.addEventListener("stepChanged", (step) => {
-          setStep(step.detail.step);
-        });
-        setUtility(newUtilityId);
-        setStep(newUtilityId.step);
+      const tmpUtility = await whal3s.createValidationUtility(utilityId);
+      tmpUtility.addEventListener("stepChanged", (step) => {
+        console.log("setting step to ", step.detail.step);
+        setUtility(tmpUtility);
+        setStep(step.detail.step);
       });
+      setUtility(tmpUtility);
+      setStep(tmpUtility.step);
     } catch (e) {
       setUtility(undefined);
-      setStep(0);
-      console.error(e);
     }
   }
-
-  console.log(utility);
 
   return (
     <div className="border rounded-lg border-zinc-300 p-5 md:p-10 ">
       <div>
         <div className="flex space-x-2.5"></div>
       </div>
-      {utility && utility ? (
+      {utility ? (
         <div className="grid gap-5 grid grid-cols-1 md:grid-cols-[1fr_2fr]">
           <div className="flex flex-col align-center">
-            <h4 className="font-bold text-2xl">{utility?.details.name}</h4>
-            <p>{utility?.details.description}</p>
+            <h4 className="font-bold text-2xl">{utility.details.name}</h4>
+            <p>{utility.details.description}</p>
             <img
               src="https://ipfs.thirdwebcdn.com/ipfs/Qmf1eey2fAHZU5pnmymVyhyX89bUx4jqQgAGwxdTYHPG2Q/QmdyQByUtuPEMa6n8PwtgLgedcFHWBYSbriQyNduAnA66t.png"
               alt=""

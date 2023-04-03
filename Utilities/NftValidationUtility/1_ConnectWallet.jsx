@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import WebButton from "../../WebButton";
-import notify from "../../../utils/notify";
+import WebButton from "../../components/WebButton";
+import notify from "../../utils/notify";
 
 const ConnectWallet = ({ utility }) => {
   const [loading, setLoading] = useState(false);

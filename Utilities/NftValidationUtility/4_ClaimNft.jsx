@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Button from "../../WebButton";
-import notify from "../../../utils/notify";
+import Button from "../../components/WebButton";
+import notify from "../../utils/notify";
 
 const ClaimNft = ({ utility }) => {
   // Add additional data to the engagement before saving finally

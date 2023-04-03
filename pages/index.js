@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 
 const NftValidationUtilitySection = dynamic(
-  () => import("../components/Utilities/NftValidationUtilitySection"),
+  () => import("../Utilities/NftValidationUtilitySection"),
   { ssr: false }
 );
 import WelcomePage from "../components/WelcomePage";
