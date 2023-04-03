@@ -16,7 +16,6 @@
     "@reduxjs/toolkit": "^1.9.3",
     "@thirdweb-dev/react": "^3.10.3",
     "@thirdweb-dev/sdk": "^3.10.3",
-    "@whal3s/whal3s.js": "^0.3.4",
     "bootstrap": "^5.2.3",
     "dotenv": "^16.0.3",
     "eslint": "8.27.0",
