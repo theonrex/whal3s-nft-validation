@@ -141,6 +141,9 @@ button {
   .steps_section {
     display: flex;
   }
+  .steps_section {
+    margin-bottom: 0em;
+  }
 }
 @media screen and (max-width: 490px) {
   .utility_h1 span {

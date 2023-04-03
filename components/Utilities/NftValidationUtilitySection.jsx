@@ -10,7 +10,7 @@ import SelectNft from "./NftValidationUtility/3_SelectNft";
 import { ImSpinner2 } from "react-icons/im";
 
 const NftValidationUtilitySection = () => {
-  const whal3s = new Whal3s();
+ const whal3s = new Whal3s();
   const [utilityId, setUtilityId] = useState(
     JSON.parse(localStorage.getItem(process.env.NEXT_PUBLIC_UTILITY_ID)) ||
       undefined
