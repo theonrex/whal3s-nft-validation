@@ -152,9 +152,12 @@ button {
 @media screen and (max-width: 490px) {
   .utility_h1 span {
     line-height: 1.3em;
-    font-size: 1.6em;
+    font-size: 1.9em;
   }
-
+.utility_p {
+    font-size: 1em;
+    color: white;
+}
   .utility_h1 {
     font-size: 1.1em;
     text-transform: capitalize;

@@ -64,16 +64,16 @@ const NftValidationUtilitySection = () => {
     try {
       const tmpUtility = await whal3s.createValidationUtility(utilityId);
       tmpUtility.addEventListener("stepChanged", (step) => {
-        if (utility) {
-          console.log("setting step to ", step.detail.step);
-          setUtility(tmpUtility);
-          setStep(step.detail.step);
-      }
+       console.log("setting step to ", step.detail.step);
+       setUtility(tmpUtility);
+       setStep(step.detail.step);
       });
       setUtility(tmpUtility);
       setStep(tmpUtility.step);
     } catch (e) {
       setUtility(undefined);
+      setStep(0);
+      console.error(e);
     }
   }
 
@@ -85,7 +85,7 @@ const NftValidationUtilitySection = () => {
       <div>
         <div className="flex space-x-2.5"></div>
       </div>
-      {utility ? (
+      {utility || !utility ? (
         <div className="grid gap-5 grid grid-cols-1 md:grid-cols-[1fr_2fr]">
           <div className="flex flex-col align-center">
             <h4 className="font-bold text-2xl">{utility.details.name}</h4>
