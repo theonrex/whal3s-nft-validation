@@ -26,7 +26,7 @@ const ConnectWallet = ({ utility }) => {
       </p>
 
       <div className="mt-5 flex flex-grow items-end justify-end">
-        <Button
+        <WebButton
           isLoading={loading}
           className=""
           onClick={() => {
@@ -34,7 +34,7 @@ const ConnectWallet = ({ utility }) => {
           }}
         >
           Connect Wallet
-        </Button>
+        </WebButton>
       </div>
     </div>
   );

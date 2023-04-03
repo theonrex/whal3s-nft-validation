@@ -4,9 +4,6 @@ export default function NftValidationUtilityProgressBar({ currentStep }) {
     return progress === 0 ? 10 : progress;
   };
 
-  
-
-  console.log(currentStep);
   return (
     <div>
       <h4 className="sr-only">Status</h4>

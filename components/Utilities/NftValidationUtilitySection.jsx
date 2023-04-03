@@ -24,13 +24,11 @@ const NftValidationUtilitySection = () => {
     self = this;
   }
 
-
   const myUtilityId = newUtilityId;
   useEffect(() => {
     myUtilityId;
-  }, [])
+  }, []);
 
-  console.log(myUtilityId);
 
   const updateUtilityId = () => {
     localStorage.setItem(
@@ -40,9 +38,9 @@ const NftValidationUtilitySection = () => {
     setUtilityId(myUtilityId);
   };
 
-   useEffect(() => {
-     updateUtilityId();
-   }, []);
+  useEffect(() => {
+    updateUtilityId();
+  }, []);
 
   useEffect(() => {
     init();

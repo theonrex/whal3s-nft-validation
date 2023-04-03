@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;900&display=swap");
-
 html,
 body {
   padding: 0;
@@ -33,7 +32,7 @@ button {
 }
 
 .progress_bar {
-  background-color: #65005d;
+  background-color: #ff4800;
 }
 
 .utility_h1 {
@@ -139,53 +138,32 @@ button {
   .col50 {
     width: 100%;
   }
-
-  .steps_section {
-    margin-bottom: 0em;
-  }
-
   .steps_section {
     display: flex;
-    align-items: baseline;
-    flex-direction: row;
-  }
-
-  .h1_circle {
-
-    margin: 0;
-    padding: 0.2em 0 0;
   }
 }
-
 @media screen and (max-width: 490px) {
   .utility_h1 span {
     line-height: 1.3em;
     font-size: 1.6em;
   }
-
   .utility_h1 {
     font-size: 1.1em;
     text-transform: capitalize;
     font-weight: 900;
   }
-
   .select_nft {
     flex-direction: column;
   }
-
   .select_nft div {
     margin-left: 0 !important;
   }
-
   .steps_section {
     padding-bottom: 3em;
   }
-
   footer .flex {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-}
-
-/*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */

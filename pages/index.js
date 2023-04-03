@@ -6,7 +6,6 @@ const NftValidationUtilitySection = dynamic(
   { ssr: false }
 );
 import WelcomePage from "../components/WelcomePage";
-import Footer from "../components/Layout/Footer"
 import { Toaster } from "react-hot-toast";
 
 export default function Home() {
@@ -21,7 +20,6 @@ export default function Home() {
       >
         <NftValidationUtilitySection />
       </div>
-      <Footer />
       <Toaster />
     </>
   );
