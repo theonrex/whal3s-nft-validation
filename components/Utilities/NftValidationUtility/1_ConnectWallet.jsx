@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Button from "../../Button";
+import WebButton from "../../WebButton";
 import notify from "../../../utils/notify";
 
 const ConnectWallet = ({ utility }) => {

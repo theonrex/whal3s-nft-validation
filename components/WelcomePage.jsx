@@ -17,7 +17,7 @@ export default function WelcomePage() {
         </p>
       </section>
       <section className="col50">
-        <header className="ml-1">Follow the following steps</header>
+        <header className="mb-3">Follow the following steps</header>
 
         <div className="steps_section">
           <h1 className="col8 h1_circle">

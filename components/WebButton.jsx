@@ -1,7 +1,7 @@
 import React from "react";
 import { ImSpinner2 } from "react-icons/im";
 
-const Button = ({
+const WebButton = ({
   onClick,
   children,
   className = "",
@@ -27,4 +27,4 @@ const Button = ({
   );
 };
 
-export default Button;
+export default WebButton;

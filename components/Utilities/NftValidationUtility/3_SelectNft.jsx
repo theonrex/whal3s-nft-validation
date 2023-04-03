@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Button from "../../Button";
+import WebButton from "../../WebButton";
 import { format } from "timeago.js";
 import { NftValidationUtility } from "@whal3s/whal3s.js";
 import notify from "../../../utils/notify";
@@ -111,7 +111,7 @@ const SelectNft = ({ utility }) => {
           </div>
         )}
         <div className="mt-5 flex flex-grow items-end justify-end">
-          <Button
+          <WebButton
             disabled={utility.step !== NftValidationUtility.STEP_TOKEN_SELECTED}
             isLoading={loading}
             onClick={() => {
@@ -121,7 +121,7 @@ const SelectNft = ({ utility }) => {
             }}
           >
             Next
-          </Button>
+          </WebButton>
         </div>
       </div>
     </div>

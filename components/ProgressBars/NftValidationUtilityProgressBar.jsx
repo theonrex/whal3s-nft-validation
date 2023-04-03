@@ -1,9 +1,10 @@
 export default function NftValidationUtilityProgressBar({ currentStep }) {
   const computePercentage = () => {
     let progress = (currentStep / 5) * 100;
-    return progress === 0 ? 10 : progress
-      ;
+    return progress === 0 ? 10 : progress;
   };
+
+  
 
   console.log(currentStep);
   return (

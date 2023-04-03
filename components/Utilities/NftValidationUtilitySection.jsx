@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Whal3s, { NftValidationUtility } from "@whal3s/whal3s.js";
-import Button from "../../Components/Button";
 import NftValidationUtilityProgressBar from "../ProgressBars/NftValidationUtilityProgressBar";
-import TextInput from "../TextInput";
-import InputLabel from "../InputLabel";
 import Uninitialized from "./NftValidationUtility/0_Uninitialized";
 import ConnectWallet from "./NftValidationUtility/1_ConnectWallet";
 import LoadingNfts from "./NftValidationUtility/2_LoadingNfts";
