@@ -17,6 +17,8 @@ import { jsonRpcProvider } from "wagmi/providers/jsonRpc";
 import { publicProvider } from "wagmi/providers/public";
 const activeChain = "mumbai";
 
+import { Buffer } from "buffer";
+window.Buffer = window.Buffer || Buffer;
 
 const mumbaiChain = {
   id: 80001,
