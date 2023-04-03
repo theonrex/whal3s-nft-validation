@@ -10,13 +10,12 @@ import SelectNft from "./NftValidationUtility/3_SelectNft";
 import { ImSpinner2 } from "react-icons/im";
 
 const NftValidationUtilitySection = () => {
-
   const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
     setIsLoaded(true);
   }, []);
 
- const whal3s = new Whal3s();
+  const whal3s = new Whal3s();
   const [utilityId, setUtilityId] = useState(
     JSON.parse(localStorage.getItem("365e457c-a900-47ab-be41-cd58775b212b")) ||
       undefined
@@ -35,7 +34,6 @@ const NftValidationUtilitySection = () => {
     myUtilityId;
   }, []);
 
-
   const updateUtilityId = () => {
     localStorage.setItem(
       "365e457c-a900-47ab-be41-cd58775b212b",
@@ -53,6 +51,30 @@ const NftValidationUtilitySection = () => {
     init();
   }, [isLoaded]);
 
+  // async function init() {
+  //   console.log("init");
+  //   if (!utilityId) return;
+  //   setStep(0);
+  //   if (utility) {
+  //     console.log("destroying old utility");
+  //     utility.destroy();
+  //   }
+  //   try {
+  //     const tmpUtility = await whal3s.createValidationUtility(utilityId);
+  //     tmpUtility.addEventListener("stepChanged", (step) => {
+  //      console.log("setting step to ", step.detail.step);
+  //      setUtility(tmpUtility);
+  //      setStep(step.detail.step);
+  //     });
+  //     setUtility(tmpUtility);
+  //     setStep(tmpUtility.step);
+  //   } catch (e) {
+  //     setUtility(undefined);
+  //     setStep(0);
+  //     console.error(e);
+  //   }
+  // }
+
   async function init() {
     console.log("init");
     if (!utilityId) return;
@@ -62,14 +84,13 @@ const NftValidationUtilitySection = () => {
       utility.destroy();
     }
     try {
-      const tmpUtility = await whal3s.createValidationUtility(utilityId);
-      tmpUtility.addEventListener("stepChanged", (step) => {
-       console.log("setting step to ", step.detail.step);
-       setUtility(tmpUtility);
-       setStep(step.detail.step);
+      whal3s.createValidationUtility(newUtilityId).then((newUtilityId) => {
+        newUtilityId.addEventListener("stepChanged", (step) => {
+          setStep(step.detail.step);
+        });
+        setUtility(newUtilityId);
+        setStep(newUtilityId.step);
       });
-      setUtility(tmpUtility);
-      setStep(tmpUtility.step);
     } catch (e) {
       setUtility(undefined);
       setStep(0);
@@ -77,15 +98,14 @@ const NftValidationUtilitySection = () => {
     }
   }
 
-
-  console.log(utility)
+  console.log(utility);
 
   return (
     <div className="border rounded-lg border-zinc-300 p-5 md:p-10 ">
       <div>
         <div className="flex space-x-2.5"></div>
       </div>
-      {utility || !utility ? (
+      {utility && utility ? (
         <div className="grid gap-5 grid grid-cols-1 md:grid-cols-[1fr_2fr]">
           <div className="flex flex-col align-center">
             <h4 className="font-bold text-2xl">{utility?.details.name}</h4>
