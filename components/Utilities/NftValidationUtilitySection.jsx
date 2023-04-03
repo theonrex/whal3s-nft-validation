@@ -10,6 +10,12 @@ import SelectNft from "./NftValidationUtility/3_SelectNft";
 import { ImSpinner2 } from "react-icons/im";
 
 const NftValidationUtilitySection = () => {
+
+  const [isLoaded, setIsLoaded] = useState(false);
+  useEffect(() => {
+    setIsLoaded(true);
+  }, []);
+
  const whal3s = new Whal3s();
   const [utilityId, setUtilityId] = useState(
     JSON.parse(localStorage.getItem("365e457c-a900-47ab-be41-cd58775b212b")) ||
@@ -43,8 +49,9 @@ const NftValidationUtilitySection = () => {
   }, []);
 
   useEffect(() => {
+    if (!isLoaded) return; // Only run on client-side after server load
     init();
-  }, [utilityId]);
+  }, [isLoaded]);
 
   async function init() {
     console.log("init");
